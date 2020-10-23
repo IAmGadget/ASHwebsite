@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aSimpleHosting</title>
+	<link rel="icon" type="img/png" href="icon.png">
+	<link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+	<style type="text/css">
+		* {
+			overflow-x: hidden;
+			  -webkit-touch-callout: none; /* iOS Safari */
+			    -webkit-user-select: none; /* Safari */
+			     -khtml-user-select: none; /* Konqueror HTML */
+			       -moz-user-select: none; /* Firefox */
+			        -ms-user-select: none; /* Internet Explorer/Edge */
+			            user-select: none; /* Non-prefixed version, currently
+			                                  supported by Chrome and Opera */
+		}
+		/* width */
+		::-webkit-scrollbar {
+		  width: 10px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+		  background: #f1f1f1;
+		}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+		  background: #888;
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+		  background: #555;
+		}
+		@keyframes animate-text {
+			0% {color: white;}
+			25% {color: grey;}
+			50% {color: black;}
+			75% {color: grey;}
+			100% {color: white;}
+		}
+		.welcome-banner {
+			background-image: url("mc-mountains.jpg"); opacity: 1;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.main-text {
+			font-size: 5vw;
+			transition: opacity 1s;
+			transition: height 1s;
+		}
+		@keyframes blink {
+			0% {opacity: 0%}
+			100% {opacity: 100%;}
+		}
+		.main-text-under {
+			animation-name: blink;
+			animation-duration: 0.5s;
+			animation-iteration-count: infinite;
+		}
+		.col-6 img {
+			border-radius: 100%;
+		}
+	</style>
+	<script type="text/javascript">
+		const checkpoint = 300;
+ 
+		window.addEventListener("scroll", () => {
+		  const currentScroll = window.pageYOffset;
+		  if (currentScroll <= checkpoint) {
+		    opacity = 1 - currentScroll / checkpoint;
+		    display = "block"
+		  } else {
+		    opacity = 0;
+		    display = "none"
+		  }
+		  document.querySelector(".welcome-banner").style.opacity = opacity;
+		});
+	</script>
+</head>
+<body class="bg-secondary" oncopy="return false" oncut="return false" onpaste="return false" unselectable="on">
+	<div id="top"></div>
+	<!-- <div class="alert alert-warning fixed-bottom w-25 ml-3">
+		<img src="alert-octagon.svg"> Enjoy the website<button class="btn btn-sm float-right" onclick="this.parentElement.style.display = 'none'">&times;</button>
+	</div> -->
+	<div class="text-center text-light font-weight-bold bg-dark welcome-banner" style="height: 100vh;">
+		<div class="text-light float-right" style="position: absolute;right: 1%;top: 1%;background-color: none;">
+			<a href="./link" class="text-light" style="font-size: 15px">MyAsh <img src="arrow-right.svg"></a>
+		</div><!--My ash-->
+		<h1 style="margin: 23% 0;position: absolute;width: 100%;height: 250px;" class="main-text">aSimpleHosting<span class="main-text-under">_</span></h1> 
+	</div>
+	<div class="top-page">
+		<a href="#top">&uarr;</a>
+	</div>
+	<div class="m-5 text-light" style="height: 50%;">
+		<div class="container-sm">
+			<div class="row">
+				<div class="col-md">
+					<legend style="border-bottom: solid 2px white" class="w-25 text-center"><img src="info.svg" style="vertical-align: middle;"> About us</legend>
+					<p>We are a small game server hosting company. Our plan is to deliver cheap servers to you, without digging a huge hole into your wallet. We are a non-profitable company. All profits we get from the company goes straight back into buying more hardware and software to make your experience a much better one.</p>
+				</div>
+				<div class="col-md"></div>
+			</div>
+			<div class="row">
+				<div class="col-md"></div>
+				<div class="col-md">
+					<legend style="border-bottom: solid 2px white" class="w-25 text-center"><img src="info.svg" style="vertical-align: middle;"> Pricing</legend>
+					<p>We offer a variety of deals to all of our customers. Be sure to ask!<br>Our prices start off at <b>1.40&euro;/GB</b> of RAM. We are always offering deals so be sure to <a href='#' class="font-weight-bold">Join our support server</a> today and get your offer from one of our support team members.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md">
+					<legend style="border-bottom: solid 2px white" class="w-50 text-center"><img src="info.svg" style="vertical-align: middle;"> Our mission</legend>
+					<p>Our mission is to give everyone a chance and oppurtunity to get a running server going and earn skills in management and business. If you think you are ready to take on this challenge or would like to give it a go but with some assistance, <a href="#contact-us" class="font-weight-bold">Contact us today!</a></p>
+				</div>
+				<div class="col-md"></div>
+			</div>
+			<div class="row">
+				<div class="col-md"></div>
+				<div class="col-md">
+					<legend style="border-bottom: solid 2px white" class="w-50 text-center"><img src="info.svg" style="vertical-align: middle;"> Where can I buy?</legend>
+					<p>We are only taking orders through our <a href="https://discord.gg/s8yutnz">Discord</a> currently. To make an order or a enquiry. Go to #🤖commands🤖 and do: <b>-new</b>. You will then be taken to a ticket created by our wonderful bot. From there you have 3 choices. <b>General Issue | Server issue | Purchase</b>. From there you can choose the appropriate category. In this case, <b>Purchase</b>. After that, follow the tickets instructions.</p>
+				</div>
+			</div>
+			<footer class="mt-5 text-left" style="border-top: solid 1px white;">
+				<div class="row">
+					<div class="col-md">
+						<legend id="#contact-us">Contact us</legend>
+						<div class="ml-3" style="display: flex;flex-direction: column;">
+							<a href="https://discord.gg/s8yutnz" class="text-light">Join our Discord</a>
+							<a href="mailto:support@aSimpleHosting.co.uk" class="text-light">Email us</a>
+					</div>
+				</div>
+				<div class="col-md">
+					<legend>Credits</legend>
+					<div class="ml-3" style="display: flex;flex-direction: column;">
+						<a>Logo - LogoMaker</a>
+						<a>Responsive design - Bootstrap</a>
+					</div>
+					
+				</div>
+				<div class="col-md"><img src="icon.png"></div>
+			</div>
+				
+			</footer>
+		</div>
+	</div>	
+</body>
+</html>
